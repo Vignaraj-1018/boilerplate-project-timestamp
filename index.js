@@ -34,12 +34,12 @@ app.get("/api/:data", function(req, res){
   var date = new Date(milliseconds);
 
   if(isNaN(date.getDate())){
-    res.json({"error":"Invalid Date"});
+    res.json({error:"Invalid Date"});
   }
   
   var utcTime = date.toUTCString();
   console.log(req.params.data, utcTime);
-  res.json({"unix":req.params.data*1 , "utc":utcTime});
+  res.json({unix:req.params.data*1 , utc:utcTime});
 });
 
 
