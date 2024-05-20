@@ -27,7 +27,7 @@ app.get("/api/hello", function (req, res) {
 app.get("/api/:data", function(req, res){
   if (!req.params.data) {
     var currentDate = new Date();    
-    return { unix: currentDate.getTime(), utc: currentDate.toUTCString() };
+    res.json({ unix: currentDate.getTime(), utc: currentDate.toUTCString() });
 }
   var milliseconds = req.params.data * 1000;
   
